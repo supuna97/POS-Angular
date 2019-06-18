@@ -63,7 +63,7 @@
             <th scope="col">#</th>
             <th scope="col">Item Name</th>
             <th scope="col">Unit Price</th>
-            <th scope="col">Qty</th>
+            <th scope="col">Qty on hand</th>
             <th scope="col">Total Price</th>
           </tr>
           </thead>
@@ -92,27 +92,28 @@
       </div>
     </div>
 
-    <div class="col-sm-12">
+    <div class="col-sm-12" style=" border-color: #962d22; background-color:aliceblue ;height: 140px">
+      <br>
       <form>
 
         <div class="row">
 
           <div class="form-group col-sm-3">
-            <label for="unitpriceorder">Unit Price</label>
-            <input type="text" class="form-control" id="unitpriceorder" autocomplete="off">
+            <label for="totalamount">Total Amount</label>
+            <input type="number" class="form-control" id="totalamount" autocomplete="off">
           </div>
 
           <div class="form-group col-sm-3">
-            <label for="qtyorder">QTY</label>
-            <input type="text" class="form-control" id="qtyorder" autocomplete="off">
+            <label for="givecash">give cash</label>
+            <input type="number" class="form-control" id="givecash" autocomplete="off">
           </div>
 
           <div class="form-group col-sm-3">
-            <label for="totalitemprice">Total Price</label>
-            <input type="text" class="form-control" id="totalitemprice" autocomplete="off">
+            <label for="balance">Balance</label>
+            <input type="number" class="form-control" id="balance" autocomplete="off">
           </div>
           <div class="form-group col-sm-3">
-            <button type="submit" class="btn btn-primary">Add Item</button>
+            <button type="submit" class="btn btn-success" style="margin-top: 30px">Place Order</button>
           </div>
         </div>
 
