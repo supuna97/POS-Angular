@@ -1,7 +1,7 @@
 export class ItemDTO {
 
   code: number;
-  description: string;
-  unitprice: number;
+  name: string;
+  price: number;
   qty: number;
 }
