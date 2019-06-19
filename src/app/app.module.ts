@@ -8,6 +8,8 @@ import { ItemComponent } from './view/item/item.component';
 import { OrdersComponent } from './view/orders/orders.component';
 import { DashboardComponent } from './view/dashboard/dashboard.component';
 import { MainComponent } from './view/main/main.component';
+import {CustomerService} from './services/customer.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,12 @@ import { MainComponent } from './view/main/main.component';
     ItemComponent,
     OrdersComponent,
     DashboardComponent,
-    MainComponent
+    MainComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
