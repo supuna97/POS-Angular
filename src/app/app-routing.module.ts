@@ -12,10 +12,11 @@ const routes: Routes = [
     path: 'main',
     component: MainComponent,
     children: [
-      {path: 'customer', component: CustomerComponent},
+      {path: 'dashboard', component: DashboardComponent},
+      {path: 'cust', component: CustomerComponent},
       {path: 'item', component: ItemComponent},
       {path: 'order', component: OrdersComponent},
-      {path: 'dashboard', component: DashboardComponent},
+
     ]
   },
   {path: 'main', component: MainComponent},

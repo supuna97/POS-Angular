@@ -8,15 +8,10 @@ import {CustomerService} from '../../services/customer.service';
 })
 export class CustomerComponent implements OnInit {
 
-  constructor(private cusService: CustomerService) {
+  constructor() {
   }
 
   ngOnInit() {
 
   }
-
-  btnclick() {
-    this.cusService.print();
-  }
-
 }
