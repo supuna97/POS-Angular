@@ -8,21 +8,21 @@
         <form>
 
           <div class="form-group">
-            <label for="description">Description</label>
-            <input type="text" class="form-control" id="description" autocomplete="off" placeholder="Description" required >
+            <label for="name">Description</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="itemDTO.name" autocomplete="off" placeholder="Item Name" required minlength="2" >
           </div>
           <div class="form-group">
-            <label for="unitprice">Unit Price</label>
-            <input type="number" class="form-control" id="unitprice" autocomplete="off" placeholder="Unit Price" required >
+            <label for="price">Unit Price</label>
+            <input type="number" class="form-control" id="price" [(ngModel)]="itemDTO.price" autocomplete="off" placeholder="Unit Price" required minlength="2" >
           </div>
           <div class="form-group">
             <label for="qty">Qty</label>
-            <input type="number" class="form-control" id="qty" autocomplete="off" placeholder="Qty on Hand" required >
+            <input type="number" class="form-control" id="qty" [(ngModel)]="itemDTO.qty" autocomplete="off" placeholder="Qty on Hand" required minlength="2" >
           </div>
           <div class="row">
-            <button style="margin-left: 13px" type="submit" class="btn btn-success col-sm-3">Save</button>
-            <button style="margin-left: 15px" type="submit" class="btn btn-primary col-sm-3">Update</button>
-            <button style="margin-left: 15px" type="submit" class="btn btn-danger col-sm-3">Delete</button>
+            <button style="margin-left: 13px" type="submit" *ngIf="!isEdit" (click)="addItem()" class="btn btn-success col-sm-3">Save</button>
+            <button style="margin-left: 15px" type="submit" *ngIf="!isEdit" (click)="updateItem()" class="btn btn-primary col-sm-3">Update</button>
+            <button style="margin-left: 15px" type="submit" *ngIf="!isEdit" (click)="deleteItem(itemDTO.code)" class="btn btn-danger col-sm-3">Delete</button>
           </div>
 
         </form>
@@ -41,34 +41,11 @@
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+          <tr *ngFor="let item of itemList" (click)="loadItem(item)">
+            <td>{{item.code}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.qty}}</td>
           </tr>
           </tbody>
         </table>
