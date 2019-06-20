@@ -14,8 +14,10 @@ export class CustomerComponent implements OnInit {
   isEdit: Boolean = false;
   customerId: number;
 
+
   constructor(private customerService: CustomerService) {
   }
+
 
   ngOnInit() {
     this.getAll();
@@ -23,11 +25,9 @@ export class CustomerComponent implements OnInit {
 
   addCustomer() {
     this.customerDTO.cid = 0;
-    alert(JSON.stringify(this.customerDTO));
-    console.log(JSON.stringify(this.customerDTO));
     this.customerService.addCustomer(this.customerDTO).subscribe(
       result => {
-        if (result) {
+        if (!result) {
           alert('Customer Added Successfully');
           this.getAll();
         }

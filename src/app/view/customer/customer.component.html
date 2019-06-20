@@ -21,10 +21,9 @@
           </div>
 
           <div class="form-group">
-            <label for="salary">Mobile Number</label>
-            <input class="form-control" id="salary" name="salary" autocomplete="off" [(ngModel)]="customerDTO.mobile"
-                   placeholder="Mobile Number" required minlength="10" maxlength="10"
-                   pattern="/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/"
+            <label for="phone">Mobile Number</label>
+            <input type="number" class="form-control" id="phone" name="phone" autocomplete="off" [(ngModel)]="customerDTO.mobile"
+                   placeholder="Mobile Number" required minlength="10"
             >
           </div>
           <div class="row">
@@ -44,7 +43,7 @@
       <div class="col-sm-1"></div>
       <div class="col-sm-7">
         <br>
-        <table class="table table-hover">
+        <table id="custable" class="table table-hover">
           <thead>
           <tr>
             <th scope="col">id</th>

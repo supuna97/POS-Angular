@@ -5,3 +5,26 @@
 .ng-invalid:not(form){
   border-left: 5px solid red;
 }
+
+#custable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#custable td, #custable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#custable tr:nth-child(even){background-color: #f2f2f2;}
+
+#custable tr:hover {background-color: #ddd;}
+
+#custable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #263238;
+  color: white;
+}

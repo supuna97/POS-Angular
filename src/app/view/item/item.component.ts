@@ -23,10 +23,10 @@ export class ItemComponent implements OnInit {
 
   addItem() {
     this.itemDTO.code = 0;
-    console.log(JSON.stringify(this.itemDTO));
+    // console.log(JSON.stringify(this.itemDTO));
     this.itemService.addItem(this.itemDTO).subscribe(
       result => {
-        if (result == null) {
+        if (!result) {
           alert('Item Added Successfully..');
           this.getAll();
         }
