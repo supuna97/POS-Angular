@@ -23,11 +23,13 @@ export class CustomerComponent implements OnInit {
 
   addCustomer() {
     this.customerDTO.cid = 0;
+    alert(JSON.stringify(this.customerDTO));
     console.log(JSON.stringify(this.customerDTO));
     this.customerService.addCustomer(this.customerDTO).subscribe(
       result => {
         if (result) {
-          alert(JSON.stringify(result));
+          alert('Customer Added Successfully');
+          this.getAll();
         }
 
       }
@@ -38,8 +40,10 @@ export class CustomerComponent implements OnInit {
     alert(JSON.stringify(this.customerDTO));
     this.customerService.updateCustomer(this.customerDTO).subscribe(
       result => {
-        if (result) {
-          alert(JSON.stringify(result));
+        if (!result) {
+          alert('Customer Update Successfully..');
+          this.getAll();
+          this.isEdit = false;
         }
 
       }
@@ -55,10 +59,11 @@ export class CustomerComponent implements OnInit {
   }
 
   deleteCustomer(id: number) {
-    alert('IDm componont :----> ' + id);
-    this.customerService.deleteCustomer(id).subscribe(relsult => {
-      if (relsult === true) {
+    alert('ID componont :----> ' + id);
+    this.customerService.deleteCustomer(id).subscribe(result => {
+      if (!result) {
         alert('Customer deleted successfully');
+        this.getAll();
       } else {
         alert('Customer deleted failed');
       }

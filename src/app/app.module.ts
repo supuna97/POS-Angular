@@ -8,8 +8,8 @@ import {ItemComponent} from './view/item/item.component';
 import {OrdersComponent} from './view/orders/orders.component';
 import {DashboardComponent} from './view/dashboard/dashboard.component';
 import {MainComponent} from './view/main/main.component';
-import {CustomerService} from './services/customer.service';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,9 @@ import {HttpClientModule} from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

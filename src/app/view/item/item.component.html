@@ -9,20 +9,29 @@
 
           <div class="form-group">
             <label for="name">Description</label>
-            <input type="text" class="form-control" id="name" [(ngModel)]="itemDTO.name" autocomplete="off" placeholder="Item Name" required minlength="2" >
+            <input type="text" class="form-control" id="name" [(ngModel)]="itemDTO.name" name="name" autocomplete="off"
+                   placeholder="Item Name" required minlength="4">
           </div>
           <div class="form-group">
             <label for="price">Unit Price</label>
-            <input type="number" class="form-control" id="price" [(ngModel)]="itemDTO.price" autocomplete="off" placeholder="Unit Price" required minlength="2" >
+            <input type="text" class="form-control" id="price" [(ngModel)]="itemDTO.price" name="price"
+                   autocomplete="off" placeholder="Unit Price" required minlength="2" pattern="\d+(\.\d{2})?">
           </div>
           <div class="form-group">
             <label for="qty">Qty</label>
-            <input type="number" class="form-control" id="qty" [(ngModel)]="itemDTO.qty" autocomplete="off" placeholder="Qty on Hand" required minlength="2" >
+            <input type="text" class="form-control" id="qty" [(ngModel)]="itemDTO.qty" name="qty" autocomplete="off"
+                   placeholder="Qty on Hand" required minlength="2" pattern="">
           </div>
           <div class="row">
-            <button style="margin-left: 13px" type="submit" *ngIf="!isEdit" (click)="addItem()" class="btn btn-success col-sm-3">Save</button>
-            <button style="margin-left: 15px" type="submit" *ngIf="!isEdit" (click)="updateItem()" class="btn btn-primary col-sm-3">Update</button>
-            <button style="margin-left: 15px" type="submit" *ngIf="!isEdit" (click)="deleteItem(itemDTO.code)" class="btn btn-danger col-sm-3">Delete</button>
+            <button style="margin-left: 13px" type="submit" *ngIf="!isEdit" (click)="addItem()"
+                    class="btn btn-success col-sm-3">Save
+            </button>
+            <button style="margin-left: 15px" type="submit" *ngIf="isEdit" (click)="updateItem()"
+                    class="btn btn-primary col-sm-3">Update
+            </button>
+            <button style="margin-left: 15px" type="submit" *ngIf="isEdit" (click)="deleteItem(itemDTO.code)"
+                    class="btn btn-danger col-sm-3">Delete
+            </button>
           </div>
 
         </form>
@@ -33,9 +42,8 @@
         <table class="table table-hover">
           <thead>
           <tr>
-            <th scope="col">code</th>
-            <th scope="col">Name</th>
-            <th scope="col">Description</th>
+            <th scope="col">Item code</th>
+            <th scope="col">Item Name</th>
             <th scope="col">Unit Price</th>
             <th scope="col">Qty</th>
           </tr>

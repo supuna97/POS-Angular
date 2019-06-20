@@ -18,6 +18,7 @@ export class ItemComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getAll();
   }
 
   addItem() {
@@ -25,8 +26,9 @@ export class ItemComponent implements OnInit {
     console.log(JSON.stringify(this.itemDTO));
     this.itemService.addItem(this.itemDTO).subscribe(
       result => {
-        if (result) {
-          alert(JSON.stringify(result));
+        if (result == null) {
+          alert('Item Added Successfully..');
+          this.getAll();
         }
 
       }
@@ -37,8 +39,9 @@ export class ItemComponent implements OnInit {
     alert(JSON.stringify(this.itemDTO));
     this.itemService.updateItem(this.itemDTO).subscribe(
       result => {
-        if (result) {
-          alert(JSON.stringify(result));
+        if (!result) {
+          alert('Item Update Successfully..');
+          this.getAll();
         }
 
       }
@@ -48,23 +51,23 @@ export class ItemComponent implements OnInit {
   getAll() {
     this.itemService.getAllItems().subscribe(result => {
       this.itemList = result;
-      console.log('Customer List :- ' + JSON.stringify(this.itemDTO.cid));
+      console.log('Customer List :- ' + JSON.stringify(this.itemDTO.code));
     });
 
   }
 
-  deleteCustomer(id: number) {
-    alert('IDm componont :----> ' + id);
-    this.itemService.deleteItem(id).subscribe(relsult => {
-      if (relsult === true) {
+  deleteItem(id: number) {
+    this.itemService.deleteItem(id).subscribe(result => {
+      if (!result) {
         alert('Item deleted successfully');
+        this.getAll();
       } else {
         alert('Item deleted failed');
       }
     });
   }
 
-  loadCustomer(item) {
+  loadItem(item) {
     this.isEdit = true;
     const obj = this.itemDTO;
     this.itemDTO = Object.assign(obj, item);

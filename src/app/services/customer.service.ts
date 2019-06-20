@@ -10,11 +10,11 @@ export class CustomerService {
 
 
   constructor(
-    private  http = HttpClient
+    private  http: HttpClient
   ) {
   }
   addCustomer(customerDTO: CustomerDTO): Observable<CustomerDTO> {
-    console.log(JSON.stringify(customerDTO));
+    alert(JSON.stringify(customerDTO));
     return this.http.post<CustomerDTO>('http://localhost:8080/customers', customerDTO);
   }
 

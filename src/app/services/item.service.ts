@@ -1,9 +1,7 @@
 import {Injectable} from '@angular/core';
-import * as http from 'http';
-import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {CustomerDTO} from '../dto/customerDTO';
 import {ItemDTO} from '../dto/itemDTO';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +9,7 @@ import {ItemDTO} from '../dto/itemDTO';
 export class ItemService {
 
   constructor(
-    private http = HttpClient) {
+    private http: HttpClient) {
 
   }
 
@@ -32,7 +30,6 @@ export class ItemService {
     alert('service == ' + id);
     return this.http.delete<boolean>('http://localhost:8080/item' + '?id=' + id);
   }
-
 
 
 }
