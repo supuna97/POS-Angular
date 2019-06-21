@@ -1,47 +1,46 @@
 <div>
   <div class="col-xl-12">
-    <h3
-      style="color: white; width: 115.89%; background-color: #263238; margin-left: -105px;height: 60px">
+    <h3>
       <i class="fa fa-tags"></i>
       Items Details</h3>
     <br><br><br>
     <div class="row">
-      <div style=" background-color: #263238; border: 5px solid #263238;height: 450px; border-radius: 15px" class="col-sm-4 card">
-        <p style="color: white;text-align: center; font-size: 30px; font-weight: 400">Item Form</p>
+      <div class="cards col-sm-4 card ">
+        <p class="p1">Item Form</p>
         <form>
 
           <div class="form-group">
-            <label style="color: white" for="name">Item Name</label>
+            <label class="label1" for="name">Item Name</label>
             <input type="text" class="form-control" id="name" [(ngModel)]="itemDTO.name" name="name" autocomplete="off"
                    placeholder="Item Name" required minlength="4">
           </div>
           <div class="form-group">
-            <label style="color: white" for="price">Unit Price</label>
+            <label class="label1" for="price">Unit Price</label>
             <input type="text" class="form-control" id="price" [(ngModel)]="itemDTO.price" name="price"
                    autocomplete="off" placeholder="Unit Price" required minlength="2" pattern="\d+(\.\d{2})?">
           </div>
           <div class="form-group">
-            <label style="color: white" for="qty">Qty</label>
+            <label class="label1" for="qty">Qty</label>
             <input type="number" class="form-control" id="qty" [(ngModel)]="itemDTO.qty" name="qty" autocomplete="off"
                    placeholder="Qty on Hand" required minlength="2">
           </div>
           <div class="row">
-            <button style="margin-left: 13px" type="submit" *ngIf="!isEdit" (click)="addItem()"
-                    class="btn btn-success col-sm-3">Save
+            <button  type="submit" *ngIf="!isEdit" (click)="addItem()"
+                    class="btn1 btn btn-success col-sm-3">Save
             </button>
-            <button style="margin-left: 15px" type="submit" *ngIf="isEdit" (click)="updateItem()"
-                    class="btn btn-primary col-sm-3">Update
+            <button type="submit" *ngIf="isEdit" (click)="updateItem()"
+                    class="btn1 btn btn-primary col-sm-3">Update
             </button>
-            <button style="margin-left: 15px" type="submit" *ngIf="isEdit" (click)="deleteItem(itemDTO.code)"
-                    class="btn btn-danger col-sm-3">Delete
+            <button type="submit" *ngIf="isEdit" (click)="deleteItem(itemDTO.code)"
+                    class="btn1 btn btn-danger col-sm-3">Delete
             </button>
           </div>
 
         </form>
       </div>
       <div class="col-sm-1"></div>
-      <div style="background-color: #263238; border: 5px solid #263238; border-radius: 15px" class="col-sm-7 card">
-        <p style="color: white;text-align: center; font-size: 30px; font-weight: 400">Item Table</p>
+      <div class="cards col-sm-7 card">
+        <p class="p1">Item Table</p>
         <br>
         <table id="itemtable" class="table table-hover">
           <thead>

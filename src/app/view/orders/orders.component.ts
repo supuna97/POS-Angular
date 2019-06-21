@@ -15,6 +15,7 @@ export class OrdersComponent implements OnInit {
   itemList: Array<ItemDTO> = [];
   itemId: number;
   value: number;
+  customerdto: CustomerDTO = new CustomerDTO();
   itemdto: ItemDTO = new ItemDTO();
 
   constructor(

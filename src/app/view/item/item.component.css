@@ -29,3 +29,35 @@
   background-color: gray;
   color: white;
 }
+
+h3 {
+  color: white;
+  width: 115.89%;
+  background-color: #263238;
+  margin-left: -105px;
+  height: 60px;
+}
+
+.cards {
+  background-color: #263238;
+  border: 5px solid #263238;
+  height: 450px;
+  border-radius: 15px
+}
+
+.p1 {
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 400
+
+}
+
+.label1 {
+  color: white
+}
+
+.btn1 {
+  margin-left: 15px;
+}
+

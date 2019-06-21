@@ -1,3 +1,11 @@
+.ng-valid:not(form) {
+  border-left: 5px solid green;
+}
+
+.ng-invalid:not(form) {
+  border-left: 5px solid red;
+}
+
 #ortable {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -11,9 +19,15 @@
   color: white;
 }
 
-#ortable tr:nth-child{background-color: #f2f2f2; color: white}
+#ortable tr:nth-child {
+  background-color: #f2f2f2;
+  color: white
+}
 
-#ortable tr:hover {background-color: #ddd; color: white}
+#ortable tr:hover {
+  background-color: #ddd;
+  color: white
+}
 
 #ortable th {
   padding-top: 12px;
@@ -21,4 +35,48 @@
   text-align: left;
   background-color: #263238;
   color: white;
+}
+
+h3 {
+  color: white;
+  width: 115.89%;
+  background-color: #263238;
+  margin-left: -105px;
+  height: 60px;
+}
+
+.cards {
+  background-color: #263238;
+  border: 5px solid #263238;
+  border-radius: 15px;
+  height: 580px
+}
+
+.p1 {
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 400
+
+}
+
+.label1 {
+  color: white
+}
+
+.btn1 {
+  margin-left: 15px;
+}
+
+.cards2 {
+  background-color: #263238;
+  border: 5px solid #263238;
+  border-radius: 15px;
+
+}
+
+.place {
+  width: 50%;
+  margin-top: 20px;
+  margin-left: 130px
 }
