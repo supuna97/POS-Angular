@@ -15,16 +15,17 @@
 #itemtable td, #itemtable th {
   border: 1px solid #ddd;
   padding: 8px;
+  color: white;
 }
 
-#itemtable tr:nth-child(even){background-color: #f2f2f2;}
+#itemtable tr:nth-child{background-color: #f2f2f2; color: white}
 
-#itemtable tr:hover {background-color: #ddd;}
+#itemtable tr:hover {background-color: #ddd; color: white}
 
 #itemtable th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #263238;
+  background-color: gray;
   color: white;
 }

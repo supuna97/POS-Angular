@@ -1,24 +1,27 @@
 <div>
-  <br>
   <div class="col-xl-12">
-    <h2>ItemDTO Details</h2>
-    <br>
+    <h3
+      style="color: white; width: 115.89%; background-color: #263238; margin-left: -105px;height: 60px">
+      <i class="fa fa-tags"></i>
+      Items Details</h3>
+    <br><br><br>
     <div class="row">
-      <div class="col-sm-4">
+      <div style=" background-color: #263238; border: 5px solid #263238;height: 450px; border-radius: 15px" class="col-sm-4 card">
+        <p style="color: white;text-align: center; font-size: 30px; font-weight: 400">Item Form</p>
         <form>
 
           <div class="form-group">
-            <label for="name">Item Name</label>
+            <label style="color: white" for="name">Item Name</label>
             <input type="text" class="form-control" id="name" [(ngModel)]="itemDTO.name" name="name" autocomplete="off"
                    placeholder="Item Name" required minlength="4">
           </div>
           <div class="form-group">
-            <label for="price">Unit Price</label>
+            <label style="color: white" for="price">Unit Price</label>
             <input type="text" class="form-control" id="price" [(ngModel)]="itemDTO.price" name="price"
                    autocomplete="off" placeholder="Unit Price" required minlength="2" pattern="\d+(\.\d{2})?">
           </div>
           <div class="form-group">
-            <label for="qty">Qty</label>
+            <label style="color: white" for="qty">Qty</label>
             <input type="number" class="form-control" id="qty" [(ngModel)]="itemDTO.qty" name="qty" autocomplete="off"
                    placeholder="Qty on Hand" required minlength="2">
           </div>
@@ -37,7 +40,8 @@
         </form>
       </div>
       <div class="col-sm-1"></div>
-      <div class="col-sm-7">
+      <div style="background-color: #263238; border: 5px solid #263238; border-radius: 15px" class="col-sm-7 card">
+        <p style="color: white;text-align: center; font-size: 30px; font-weight: 400">Item Table</p>
         <br>
         <table id="itemtable" class="table table-hover">
           <thead>

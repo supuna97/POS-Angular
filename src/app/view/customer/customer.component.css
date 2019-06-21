@@ -15,16 +15,17 @@
 #custable td, #custable th {
   border: 1px solid #ddd;
   padding: 8px;
+  color: white;
 }
 
-#custable tr:nth-child(even){background-color: #f2f2f2;}
+#custable tr:nth-child{ background-color: #f2f2f2; color: white}
 
-#custable tr:hover {background-color: #ddd;}
+#custable tr:hover {background-color: #ddd; color: white}
 
 #custable th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #263238;
+  background-color: gray;
   color: white;
 }

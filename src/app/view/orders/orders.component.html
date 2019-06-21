@@ -1,63 +1,64 @@
 <div>
-  <br>
   <div class="col-xl-12">
-    <h2>Place Orders</h2>
+    <h3
+      style="color: white; width: 115.89%; background-color: #263238; margin-left: -105px;height: 60px">
+      <i class="fa fa-shopping-cart"></i>
+      Place Order</h3>
+    <br>
     <br>
     <div class="row">
-      <div class="col-sm-3">
+      <div style=" background-color: #263238; border: 5px solid #263238; border-radius: 15px; height: 580px"
+           class="col-sm-4 cart">
+        <p style="color: white;text-align: center; font-size: 30px; font-weight: 400">Order Form</p>
         <form>
           <div class="form-group">
             <div class="form-group">
-              <label for="customercombo">Customer Name</label>
-              <select class="form-control" id="customercombo" required pattern="">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+              <label style="color: white" for="customercombo">Customer Name</label>
+              <select class="form-control" [(ngModel)]="customerId" name="customers" id="customercombo" required>
+                <option [value]="customers.id" *ngFor="let customers of customerList">{{customers.name}}</option>
               </select>
             </div>
           </div>
-          <div class="form-group">
             <div class="form-group">
               <div class="form-group">
-                <label for="itemcombo">Item Name</label>
-                <select class="form-control" id="itemcombo" required pattern="">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                <label style="color: white">Item Name</label>
+                <select [(ngModel)]="itemdto.code" name="item"  class="form-control" id="inputState" (change)="setPrice(itemdto.code)"
+                        >
+                  <option [value]="item.code" *ngFor="let item of itemList">
+                    {{item.name}}
+                  </option>
                 </select>
               </div>
             </div>
-              <div class="form-group">
-                <label for="unitpriceorder">Unit Price</label>
-                <input type="text" class="form-control" id="unitpriceorder" autocomplete="off">
-              </div>
+          <div class="form-group">
+            <div class="form-group">
+              <label style="color: white" for="unitpriceorder">Unit Price</label>
+              <input type="text" [(ngModel)]="itemdto.price" class="form-control" id="unitpriceorder" autocomplete="off">
+            </div>
 
-              <div class="form-group">
-                <label for="qtyorder">QTY</label>
-                <input type="text" class="form-control" id="qtyorder" autocomplete="off" required pattern="">
-              </div>
+            <div class="form-group">
+              <label style="color: white" for="qtyorder">QTY</label>
+              <input type="text" class="form-control" id="qtyorder" autocomplete="off" required pattern="">
+            </div>
 
-              <div class="form-group">
-                <label for="totalitemprice">Total Price</label>
-                <input type="text" class="form-control" id="totalitemprice" autocomplete="off">
-              </div>
+            <div class="form-group">
+              <label style="color: white" for="totalitemprice">Total Price</label>
+              <input type="text" class="form-control" id="totalitemprice" autocomplete="off">
+            </div>
             <div class="form-group">
               <button type="submit" class="btn btn-primary">Add Item</button>
             </div>
-            </div>
+          </div>
 
         </form>
 
 
       </div>
       <div class="col-sm-1"></div>
-      <div class="col-sm-8">
+      <div style="background-color: #263238; border: 5px solid #263238; border-radius: 15px" class="col-sm-7 card">
+        <p style="color: white;text-align: center; font-size: 30px; font-weight: 400">Add Items Table</p>
         <br>
-        <table id="ortable" class="table table-hover col-sm-8">
+        <table id="ortable" class="table table-hover col-sm-12">
           <thead>
           <tr>
             <th scope="col">#</th>
@@ -78,39 +79,40 @@
           </tbody>
         </table>
 
+        <div class="col-sm-12" style=" background-color: #263238; border: 5px solid #263238; border-radius: 15px">
+          <form>
+
+            <div class="row">
+
+              <div class="form-group col-sm-3 ">
+                <label style="color: white" for="totalamount">Total Amount</label>
+                <input type="number" class="form-control" id="totalamount" autocomplete="off">
+              </div>
+              <div class="col-sm-1"></div>
+
+              <div class="form-group col-sm-3 ">
+                <label style="color: white" for="givecash">give cash</label>
+                <input type="number" class="form-control" id="givecash" autocomplete="off" required pattern="">
+              </div>
+              <div class="col-sm-1"></div>
+              <div class="form-group col-sm-3 ">
+                <label style="color: white" for="balance">Balance</label>
+                <input type="number" class="form-control" id="balance" autocomplete="off">
+              </div>
+
+            </div>
+            <div class="form-group col-sm-12">
+              <button type="submit" class="btn btn-success" style="width: 50% ;margin-top: 20px; margin-left: 130px">Place Order</button>
+            </div>
+          </form>
+
+
+        </div>
 
       </div>
     </div>
 
-    <div class="col-sm-12" style=" border-color: #962d22; background-color:aliceblue ;height: 140px">
-      <br>
-      <form>
 
-        <div class="row">
-
-          <div class="form-group col-sm-3">
-            <label for="totalamount">Total Amount</label>
-            <input type="number" class="form-control" id="totalamount" autocomplete="off">
-          </div>
-
-          <div class="form-group col-sm-3">
-            <label for="givecash">give cash</label>
-            <input type="number" class="form-control" id="givecash" autocomplete="off" required pattern="">
-          </div>
-
-          <div class="form-group col-sm-3">
-            <label for="balance">Balance</label>
-            <input type="number" class="form-control" id="balance" autocomplete="off">
-          </div>
-          <div class="form-group col-sm-3">
-            <button type="submit" class="btn btn-success" style="margin-top: 30px">Place Order</button>
-          </div>
-        </div>
-
-      </form>
-
-
-    </div>
 
   </div>
 </div>

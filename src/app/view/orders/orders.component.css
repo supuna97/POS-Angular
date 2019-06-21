@@ -2,16 +2,18 @@
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  height: 300px;
 }
 
 #ortable td, #ortable th {
   border: 1px solid #ddd;
   padding: 8px;
+  color: white;
 }
 
-#ortable tr:nth-child(even){background-color: #f2f2f2;}
+#ortable tr:nth-child{background-color: #f2f2f2; color: white}
 
-#ortable tr:hover {background-color: #ddd;}
+#ortable tr:hover {background-color: #ddd; color: white}
 
 #ortable th {
   padding-top: 12px;
