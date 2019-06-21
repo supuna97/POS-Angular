@@ -18,7 +18,6 @@ export class CustomerComponent implements OnInit {
   constructor(private customerService: CustomerService) {
   }
 
-
   ngOnInit() {
     this.getAll();
   }
@@ -30,6 +29,8 @@ export class CustomerComponent implements OnInit {
         if (!result) {
           alert('Customer Added Successfully');
           this.getAll();
+        } else {
+          alert('Customer Not Added');
         }
 
       }
@@ -44,6 +45,8 @@ export class CustomerComponent implements OnInit {
           alert('Customer Update Successfully..');
           this.getAll();
           this.isEdit = false;
+        } else {
+          alert('Customer Not Update..');
         }
 
       }
@@ -59,7 +62,6 @@ export class CustomerComponent implements OnInit {
   }
 
   deleteCustomer(id: number) {
-    alert('ID componont :----> ' + id);
     this.customerService.deleteCustomer(id).subscribe(result => {
       if (!result) {
         alert('Customer deleted successfully');

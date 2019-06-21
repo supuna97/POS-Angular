@@ -29,6 +29,8 @@ export class ItemComponent implements OnInit {
         if (!result) {
           alert('Item Added Successfully..');
           this.getAll();
+        } else {
+          alert('Item Not Added..');
         }
 
       }
@@ -42,6 +44,8 @@ export class ItemComponent implements OnInit {
         if (!result) {
           alert('Item Update Successfully..');
           this.getAll();
+        } else {
+          alert('Item Not Updated..');
         }
 
       }

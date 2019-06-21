@@ -20,7 +20,7 @@ const routes: Routes = [
     ]
   },
   {path: 'main', component: MainComponent},
-  {path: '', pathMatch: 'full', redirectTo: '/main'}
+  {path: '', pathMatch: 'full', redirectTo: '/main/dashboard'}
 ];
 
 @NgModule({
